@@ -1,0 +1,20 @@
+<h2><strong>ITEMS FOR MY TODO LIST:</strong></h2>
+<p>{% for key in todo_list %}{% endfor %}</p>
+<table>
+<tbody>
+<tr>
+<td>{{ key }}<form action="/delete" method="post"><input type="submit" value="Delete" /> <input name="del" type="hidden" value="{{key}}" /></form></td>
+</tr>
+</tbody>
+</table>
+<form action="/submit" method="post">
+<p>TASK:&nbsp;<input name="task" type="text" /></p>
+<p>Email: <input name="email" type="text" /></p>
+<p>Priority:<select name="priority">
+<option selected="selected" value="Low">Low</option>
+<option value="Medium">Medium</option>
+<option value="High">High</option>
+</select></p>
+<p><input type="submit" value="Add To Do Item" /></p>
+<p><input type="submit" value="Clear" /> <input type="submit" value="Save" /></p>
+</form>
